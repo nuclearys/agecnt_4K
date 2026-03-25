@@ -1,5 +1,5 @@
 import sys
-from database import create_table, save_survey
+from database import save_survey
 
 def ask_question(prompt):
     """Запрашивает у пользователя ввод, возвращает строку."""
@@ -7,7 +7,6 @@ def ask_question(prompt):
 
 def main():
     print("Добро пожаловать в опросный агент!")
-    create_table()  # убеждаемся, что таблица существует
 
     while True:
         print("\n--- Новый опрос ---")

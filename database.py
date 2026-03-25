@@ -24,18 +24,6 @@ def get_connection():
         port='5432'
     )
 
-def create_table():
-    """Создаёт таблицу survey, если она не существует."""
-    create_table_query = """
-    CREATE TABLE IF NOT EXISTS survey (
-        id SERIAL PRIMARY KEY,
-        first_name VARCHAR(100) NOT NULL,
-        last_name VARCHAR(100) NOT NULL,
-        position VARCHAR(100) NOT NULL,
-        responsibilities TEXT NOT NULL,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    );
-    """
     with get_connection() as conn:
         with conn.cursor() as cur:
             cur.execute(create_table_query)
